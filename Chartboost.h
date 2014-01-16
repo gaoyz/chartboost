@@ -1,7 +1,7 @@
 //
 //  Chartboost.h
 //  Chartboost
-//  3.3.1
+//  4.0
 //
 //  Created by Kenneth Ballenegger on 8/1/11.
 //  Copyright 2011 Chartboost. All rights reserved.
@@ -10,15 +10,27 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
+typedef enum {
+    CBLoadErrorInternal,
+    CBLoadErrorInternetUnavailable,
+    CBLoadErrorTooManyConnections, /**< Too many requests are pending for that location  */
+    CBLoadErrorWrongOrientation,    /**< Interstitial loaded with wrong orientation */
+    CBLoadErrorFirstSessionInterstitialsDisabled, /**< Interstitial disabled, first session */
+    CBLoadErrorNetworkFailure,  /**< Network request failed */
+    CBLoadErrorNoAdFound,  /**<  No ad received */
+    CBLoadErrorSessionNotStarted, /**< Session not started, use startSession method */
+} CBLoadError;
 
 @protocol ChartboostDelegate;
+@class CBAnalytics, CBStore;
 
 
 @interface Chartboost : NSObject
 
 @property (retain) NSString *appId;
 @property (retain) NSString *appSignature;
+@property (retain) NSString *appPublicKey;
+
 @property (retain) UIView   *rootView;
 
 @property (assign) id <ChartboostDelegate> delegate;
@@ -60,6 +72,12 @@
 /// Show the More Apps page
 - (void)showMoreApps;
 
+/// get the store object
+- (CBStore *)store;
+
+/// Returns the device identifier for internal testing purposes
+- (NSString *)deviceIdentifier;
+
 /// Implement this to check if the more apps page is stored in the cache
 - (BOOL)hasCachedMoreApps;
 
@@ -88,7 +106,7 @@
 - (void)didCacheInterstitial:(NSString *)location;
 
 /// Called when an interstitial has failed to come back from the server
-- (void)didFailToLoadInterstitial:(NSString *)location;
+- (void)didFailToLoadInterstitial:(NSString *)location  withError:(CBLoadError)error;
 
 /// Called when the user dismisses the interstitial
 /// If you are displaying the add yourself, dismiss it now.
@@ -99,6 +117,9 @@
 
 /// Same as above, but only called when dismissed for a click
 - (void)didClickInterstitial:(NSString *)location;
+
+/// Called when the App Store sheet is dismissed, when displaying the embedded app sheet.
+- (void)didCompleteAppStoreSheetFlow;
 
 
 /// Called before requesting the more apps view from the back-end
@@ -113,7 +134,7 @@
 - (void)didCacheMoreApps;
 
 /// Called when a more apps page has failed to come back from the server
-- (void)didFailToLoadMoreApps;
+- (void)didFailToLoadMoreApps:(CBLoadError)error;
 
 /// Called when the user dismisses the more apps view
 /// If you are displaying the add yourself, dismiss it now.
@@ -130,7 +151,6 @@
 /// Whether Chartboost should show ads in the first session
 /// Defaults to YES
 - (BOOL)shouldRequestInterstitialsInFirstSession;
-
 
 @end
 

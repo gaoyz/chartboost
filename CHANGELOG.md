@@ -3,17 +3,39 @@
 ##### Upcoming
 
 
+##### v4.1
+
+- Interstitials and More Apps will change orientation with the device if the
+  app supports multiple orientations.
+- Server responses are now validated and will fail if any field is not correct.
+- More Apps header background is now built from a tilable image.
+- An Age Gate can now be added after an interstitial has been clicked. Use the
+  delegate method `shouldPauseClickForConfirmation:` to activate it.
+- Interstitial background is now blurred if the device & OS support it.
+- Fixed break statement missing in the example project.
+- Fixed issue with the vendor id.
+
 ##### v4.0
 
-- Rate limiting of requests: only 3 interstital requests per 90s per location are allowed
+- Bundle file scanning is now an option in the header, controlled by a boolean
+  property set to false by default
+- Files in the cache folder will be now deleted if they have not been  used for
+  7 days
+- Rate limiting of requests: only 3 interstitial requests per 90s per location
+  are allowed
 - Error delegate methods now take an `enum` describing the error
-- When an interstitial is not loaded because of first session interstitials being disabled, it now triggers the failure delegate.
-- When an interstitial is the wrong orientation, it now also triggers an error.
+- When an interstitial is not loaded because of first session interstitials
+  being disabled, it now triggers the failure delegate.
+- When an interstitial is shown on the wrong orientation, it now also triggers
+  an error.
+- User-agent updated to allow wrappers to suffix User-agent.
+- Add new session analytics tools to the SDK.
 - User-agent updated to allow wrappers to suffix User-agent
 - New delegate method, to be called when the App Store sheet is dismissed.
 - Completely removing deprecated library, `CBAnalytics`.
 - New example project is now part of the sdk download package
-- When attempting to load an interstitial without having started a session, an error is triggered
+- When attempting to load an interstitial without having started a session, an
+  error is triggered
 
 - The Chartboost Store:
 

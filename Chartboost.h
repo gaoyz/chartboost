@@ -1,7 +1,7 @@
 //
 //  Chartboost.h
 //  Chartboost
-//  4.0
+//  4.1
 //
 //  Created by Kenneth Ballenegger on 8/1/11.
 //  Copyright 2011 Chartboost. All rights reserved.
@@ -19,7 +19,10 @@ typedef enum {
     CBLoadErrorNetworkFailure,  /**< Network request failed */
     CBLoadErrorNoAdFound,  /**<  No ad received */
     CBLoadErrorSessionNotStarted, /**< Session not started, use startSession method */
+    CBLoadErrorAgeGateFailure,  /**< User failed to pass the Age Gate */
 } CBLoadError;
+
+typedef void (^CBAgeGateConfirmation)(BOOL confirm);
 
 @protocol ChartboostDelegate;
 @class CBAnalytics, CBStore;
@@ -35,6 +38,7 @@ typedef enum {
 
 @property (assign) id <ChartboostDelegate> delegate;
 
+@property (assign) BOOL scansBundleForCachedImages;
 
 // Extra configuration settings
 // Timeout for requests (minimum is 10s, default is 30s)
@@ -147,10 +151,13 @@ typedef enum {
 - (void)didClickMoreApps;
 
 
-
 /// Whether Chartboost should show ads in the first session
 /// Defaults to YES
 - (BOOL)shouldRequestInterstitialsInFirstSession;
+
+/// Implement this method to control the blocking for an age gate.
+/// If the method returns NO, the callback should not be used
+- (BOOL)shouldPauseClickForConfirmation:(CBAgeGateConfirmation)callback;
 
 @end
 

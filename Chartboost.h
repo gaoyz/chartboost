@@ -1,7 +1,7 @@
 //
 //  Chartboost.h
 //  Chartboost
-//  4.1
+//  4.2
 //
 //  Created by Kenneth Ballenegger on 8/1/11.
 //  Copyright 2011 Chartboost. All rights reserved.
@@ -22,11 +22,32 @@ typedef enum {
     CBLoadErrorAgeGateFailure,  /**< User failed to pass the Age Gate */
 } CBLoadError;
 
+typedef enum : unsigned long long {
+    CBLocationStartup = 1,
+    CBLocationHomeScreen,
+    CBLocationMainMenu,
+    CBLocationGameScreen,
+    CBLocationAchievements,
+    CBLocationQuests,
+    CBLocationPause,
+    CBLocationLevelStart,
+    CBLocationLevelComplete,
+    CBLocationTurnComplete,
+    CBLocationIAPStore,
+    CBLocationItemStore,
+    CBLocationGameOver,
+    CBLocationLeaderBoard,
+    CBLocationSettings,
+    CBLocationQuit,
+} CBLocation;
+
 typedef void (^CBAgeGateConfirmation)(BOOL confirm);
 
-@protocol ChartboostDelegate;
-@class CBAnalytics, CBStore;
 
+@class CBAnalytics, CBStore, CBPostInstallAnalyticsTracker;
+
+
+@protocol ChartboostDelegate;
 
 @interface Chartboost : NSObject
 
@@ -56,28 +77,25 @@ typedef void (^CBAgeGateConfirmation)(BOOL confirm);
 - (void)cacheInterstitial;
 
 /// Cache an interstitial taking a location argument
-- (void)cacheInterstitial:(NSString *)location;
+- (void)cacheInterstitial:(CBLocation)location;
 
 /// Show an interstitial
 - (void)showInterstitial;
 
 /// Show an interstitial taking location and/or a view argument
-- (void)showInterstitial:(NSString *)location;
+- (void)showInterstitial:(CBLocation)location;
 
 /// Implement this to check if an interstitial is stored in cache for the default location
 - (BOOL)hasCachedInterstitial;
 
 /// Implement this to check if an interstitial is stored in cache for a specific location
-- (BOOL)hasCachedInterstitial:(NSString *)location;
+- (BOOL)hasCachedInterstitial:(CBLocation)location;
 
 /// Cache the More Apps page
 - (void)cacheMoreApps;
 
 /// Show the More Apps page
 - (void)showMoreApps;
-
-/// get the store object
-- (CBStore *)store;
 
 /// Returns the device identifier for internal testing purposes
 - (NSString *)deviceIdentifier;
@@ -100,27 +118,27 @@ typedef void (^CBAgeGateConfirmation)(BOOL confirm);
 
 
 /// Called before requesting an interestitial from the back-end
-- (BOOL)shouldRequestInterstitial:(NSString *)location;
+- (BOOL)shouldRequestInterstitial:(CBLocation)location;
 
 /// Called when an interstitial has been received, before it is presented on screen
 /// Return NO if showing an interstitial is currently innapropriate, for example if the user has entered the main game mode.
-- (BOOL)shouldDisplayInterstitial:(NSString *)location;
+- (BOOL)shouldDisplayInterstitial:(CBLocation)location;
 
 /// Called when an interstitial has been received and cached.
-- (void)didCacheInterstitial:(NSString *)location;
+- (void)didCacheInterstitial:(CBLocation)location;
 
 /// Called when an interstitial has failed to come back from the server
-- (void)didFailToLoadInterstitial:(NSString *)location  withError:(CBLoadError)error;
+- (void)didFailToLoadInterstitial:(CBLocation)location  withError:(CBLoadError)error;
 
 /// Called when the user dismisses the interstitial
 /// If you are displaying the add yourself, dismiss it now.
-- (void)didDismissInterstitial:(NSString *)location;
+- (void)didDismissInterstitial:(CBLocation)location;
 
 /// Same as above, but only called when dismissed for a close
-- (void)didCloseInterstitial:(NSString *)location;
+- (void)didCloseInterstitial:(CBLocation)location;
 
 /// Same as above, but only called when dismissed for a click
-- (void)didClickInterstitial:(NSString *)location;
+- (void)didClickInterstitial:(CBLocation)location;
 
 /// Called when the App Store sheet is dismissed, when displaying the embedded app sheet.
 - (void)didCompleteAppStoreSheetFlow;

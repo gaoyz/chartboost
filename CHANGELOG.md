@@ -1,7 +1,14 @@
 ###Changelog
 
-##### Upcoming
+##### v4.2
 
+- New library (CBPostInstallAnalyticsTracker) made available to track IAP.
+- Apple non-default frameworks (Quartzcore, System Configuration, Store Kit and
+  Ad Support) don't have to be linked manually anymore.
+- Carrier information added to default request parameters
+- Changed Locations for caching interstitials and more apps to an defined list.
+  Locations are now a list of enum values that can be found in the Chartboost.h file.
+- App Sheet support for More Apps.
 
 ##### v4.1
 
@@ -14,6 +21,7 @@
 - Interstitial background is now blurred if the device & OS support it.
 - Fixed break statement missing in the example project.
 - Fixed issue with the vendor id.
+- Fixed massive memory leak, thorough refactor.
 
 ##### v4.0
 

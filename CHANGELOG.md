@@ -1,5 +1,26 @@
 ###Changelog
 
+##### v4.5
+
+- Newsfeed publicly available.
+- Post Install Analytics publicly available.
+
+##### v4.4.1
+
+- Chartboost now supports x86_64 architectures (64 bit simulator)
+
+##### v4.4
+
+- New MoreApps: Location support, new look and feel, custom headers
+- Updates to video beta, optimizations, portrait support
+- New Chartboost initialization method: startWithAppId:appSignature:delegate:
+- Automatic caching enabled after show calls.
+- Deprecated default location API calls.
+- Beta Products support: inPlay and News Feed.
+- New delegate method (didFailToRecordClick:withError:). Called when a click is registered, but the user is not fowrwarded to the App Store
+- Orientation improvements: an ad will now be displayed at any orientation it
+  claims supporting, when the current orientation is not.
+
 ##### v4.2
 
 - New library (CBPostInstallAnalyticsTracker) made available to track IAP.

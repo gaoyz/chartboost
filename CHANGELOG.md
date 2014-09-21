@@ -1,5 +1,35 @@
 ###Changelog
 
+##### v5.0.2
+
+- Added functionality to close loading view if taking too long.
+- Bugfixes and stability improvements.
+
+##### v5.0.1
+
+- Bugfixes and stability improvements.
+
+##### v5.0
+
+- Public video release.
+- Update Chartboost SDK interface to use static methods.
+- Remove deprecated Chartboost Store.
+- New ChartboostExample project.
+- Many delegate methods moved to setter and getter functions.
+- Introduce new Chartboost display methods that accept a UIViewController.
+- Full SKProductsViewController support added.
+- CBPostInstallAnalyticsTracker renamed to CBAnalytics.
+- Reduce overall size of SDK.
+- Dynamically load symbols and frameworks.
+- Remove external dependencies.
+- Enable logging in DEBUG builds via environment variable.
+- Bugfixes and stability improvements.
+
+##### v4.5.1
+
+- Fixes for Store.
+- Fixes for session tracking and for invalid data types.
+
 ##### v4.5
 
 - Newsfeed publicly available.

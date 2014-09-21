@@ -1,6 +1,6 @@
 # Chartboost for iOS
 
-*Version 4.5.1*
+*Version 5.0.2*
 
 The Chartboost iOS SDK is the cornerstone of the Chartboost network. It
 provides the functionality for showing interstitials, More-Apps pages, and
@@ -11,28 +11,34 @@ tracking in-app purchase revenue.
 
 Integrating Chartboost takes two easy steps:
 
- 1. Drop the Chartboost folder into your Xcode project.
-    
-    Ensure you are linking against the following frameworks: `QuartzCore`,
-    `SystemConfiguration`, `StoreKit`, `CoreData`, `CoreMedia`, `AVFoundation`, and `CoreGraphics`.  Weak-link
-    `AdSupport.framework` by selecting "Optional" next to it in build phases.
+ 1. Add the Chartboost.framework into your Xcode project's Frameworks folder.
 
- 2. Instantiate the Chartboost SDK in your `applicationDidBecomeActive` method, like this:
+ 2. Instantiate the Chartboost SDK in your application AppDelegate.m, like this:
     
-        #import "Chartboost.h"
-        
-        - (void)applicationDidBecomeActive:(UIApplication *)application        
-            
-            // initialize the Chartboost library
-            [Chartboost startWithAppId:@"YOUR_CHARTBOOST_APP_ID" 
-            			  appSignature:@"YOUR_CHARTBOOST_APP_SIGNATURE" 
-            			      delegate:self];
-              
-            // Show an interstitial ad    
-            [[Chartboost sharedChartboost] showInterstitial:CBLocationHomeScreen];
-            
-        }
+ ```objective-c
+     #import <Chartboost/Chartboost.h>
+     
+     - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions       
+     {
+         // initialize the Chartboost library
+         [Chartboost startWithAppId:@"YOUR_CHARTBOOST_APP_ID" 
+         			  appSignature:@"YOUR_CHARTBOOST_APP_SIGNATURE" 
+         			      delegate:self];
+           
+         // Show an interstitial ad
+         [Chartboost showInterstitial:CBLocationHomeScreen];
+     }
+  ```
 
+> It is NOT RECOMMENDED that you call:
+```objective-c
++ (void)showInterstitial:(CBLocation)location;
+```
+from within your AppDelegate's:
+```objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions;
+```
+as depicted above.  It is shown as is for example purposes only.
 
 ### Dive deeper
 

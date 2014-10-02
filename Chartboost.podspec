@@ -11,5 +11,5 @@ Pod::Spec.new do |s|
   s.preserve_paths = 'Chartboost.framework'
   s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(SRCROOT)/Pods/ChartboostSDK"' }
   s.weak_frameworks = 'AdSupport'
-  s.frameworks = 'CoreGraphics', 'StoreKit'
+  s.frameworks = 'CoreGraphics', 'StoreKit', 'Chartboost'
 end

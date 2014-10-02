@@ -1,5 +1,9 @@
 ###Changelog
 
+##### v5.0.3
+
+- Bugfixes and stability improvements.
+
 ##### v5.0.2
 
 - Added functionality to close loading view if taking too long.

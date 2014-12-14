@@ -1,19 +1,74 @@
-###Changelog
+iOS Change Log
+==============
 
-##### v5.0.3
+Version 5.1.2 *(2014-12-05)*
+----------------------------
+
+Features:
+
+Fixes:
+- Fix CBAppCall crash if no resource path sent with URL. 
+- Fix bug with SKStoreProductViewController crashing due to race condition. 
+- Fix SKStoreProductViewController rotation issue with Unity. 
+- Fix concurrency issue in CBConfig. 
+
+Improvements:
+
+Version 5.1.1 *(2014-12-01)*
+----------------------------
+
+Features:
+
+Fixes:
+- Fix build for armv7s architectures. 
+
+Improvements:
+
+Version 5.1.0 *(2014-11-20)*
+----------------------------
+
+Features:
+
+Fixes:
+- Fix race condition between actions for video on replay. 
+- Fix loading screen causing issues with video and app sheet. 
+- Fix interstitial video close button appearing at incorrect time in portrait orientation. 
+- Fix rewarded video autoplays when previous display of video is dismissed instead of watched. 
+- Fix api/config not executing on soft bootups. 
+- Fix close button clipping the video player in corner. 
+- Fix api/install not being sent for soft bootups. 
+- Fix for various crashes due to memory pressure and concurrency. 
+- Fix for api/track executing on hidden files for older devices. 
+- Fix for rotating iPhone 6/6+ can cause video to display off screen. 
+- Fix for incorrect error code enumerations being used. 
+- Fix loading view not appearing for more apps page on slow connections. 
+- Fix crash in CBAnalytics if sent an invalid NSDecimalNumber. 
+
+Improvements:
+
+- Added new framework tracking values for Cordova and CocoonJS. 
+- Added new API to check visibility of Chartboost UI. 
+- Changed delegate callbacks for click and close to be sent after closing or clicking the impression. 
+- Changed autocache calls to delay execution for better performance. 
+
+Version 5.0.3 *(2014-09-30)*
+----------------------------
 
 - Bugfixes and stability improvements.
 
-##### v5.0.2
+Version 5.0.2 *(2014-09-12)*
+----------------------------
 
 - Added functionality to close loading view if taking too long.
 - Bugfixes and stability improvements.
 
-##### v5.0.1
+Version 5.0.1 *(2014-09-09)*
+----------------------------
 
 - Bugfixes and stability improvements.
 
-##### v5.0
+Version 5.0.0 *(2014-09-03)*
+----------------------------
 
 - Public video release.
 - Update Chartboost SDK interface to use static methods.
@@ -29,21 +84,25 @@
 - Enable logging in DEBUG builds via environment variable.
 - Bugfixes and stability improvements.
 
-##### v4.5.1
+Version 4.5.1 *(2014-07-18)*
+----------------------------
 
 - Fixes for Store.
 - Fixes for session tracking and for invalid data types.
 
-##### v4.5
+Version 4.5.0 *(2014-06-16)*
+----------------------------
 
 - Newsfeed publicly available.
 - Post Install Analytics publicly available.
 
-##### v4.4.1
+Version 4.4.1 *(2014-05-20)*
+----------------------------
 
 - Chartboost now supports x86_64 architectures (64 bit simulator)
 
-##### v4.4
+Version 4.4.0 *(2014-05-17)*
+----------------------------
 
 - New MoreApps: Location support, new look and feel, custom headers
 - Updates to video beta, optimizations, portrait support
@@ -55,7 +114,8 @@
 - Orientation improvements: an ad will now be displayed at any orientation it
   claims supporting, when the current orientation is not.
 
-##### v4.2
+Version 4.2.0 *(2014-03-25)*
+----------------------------
 
 - New library (CBPostInstallAnalyticsTracker) made available to track IAP.
 - Apple non-default frameworks (Quartzcore, System Configuration, Store Kit and
@@ -65,7 +125,8 @@
   Locations are now a list of enum values that can be found in the Chartboost.h file.
 - App Sheet support for More Apps.
 
-##### v4.1
+Version 4.1.0 *(2014-02-17)*
+----------------------------
 
 - Interstitials and More Apps will change orientation with the device if the
   app supports multiple orientations.
@@ -78,7 +139,8 @@
 - Fixed issue with the vendor id.
 - Fixed massive memory leak, thorough refactor.
 
-##### v4.0
+Version 4.0.0 *(2014-01-13)*
+----------------------------
 
 - Bundle file scanning is now an option in the header, controlled by a boolean
   property set to false by default
@@ -99,58 +161,65 @@
 - New example project is now part of the sdk download package
 - When attempting to load an interstitial without having started a session, an
   error is triggered
+- The Chartboost Store
 
-- The Chartboost Store:
-
-##### v4.0 betas
-
-###### 4.0-b7
+Version 4.0.0-b7 *(2013-10-08)*
+-------------------------------
 
 - Auto-upsell
 - Logging improvements, log level controllable via env variable
 - Misc bug fixes
 
-###### 4.0-b6
+Version 4.0.0-b6 *(2013-06-28)*
+-------------------------------
 
 - Improved `localizedPriceForItem` to support caching
 - Fixed crashing bug with `localizedPriceForItem` on iOS 5
 
-###### v4.0-b5
+Version 4.0.0-b5 *(2013-06-05)*
+-------------------------------
 
 - Improved `subscribeToStoreView`.
 
-###### v4.0-b4
+Version 4.0.0-b4 *(2013-06-05)*
+-------------------------------
 
 - Fixed bug when default balance is not retained.
 
-###### v4.0-b3
+Version 4.0.0-b3 *(2013-06-05)*
+-------------------------------
 
 - Fixed bug where new status code would not be allowed by mask.
 - Removed `initializeStore` from CBStore.h.
 - Completed `triggersImmediately` support for `subscribeToStoreView` to show content right away.
 
-###### v4.0-b2
+Version 4.0.0-b2 *(2013-06-04)*
+-------------------------------
 
 - Fixed memory leak in IAP manager.
 - Fixed bug where no callback when the pruchase is unsafe.
 
-###### v4.0-b1
+Version 4.0.0-b1 *(2013-05-31)*
+-------------------------------
 
 - Initial release of the Store.
 - New logging framework.
 
 
-##### v3.3.1
+Version 3.3.1 *(2013-10-29)*
+----------------------------
 
 - Fixed bug causing More Apps page crashes on iOS 7
 - Fix crashes on iOS 5 devices related to the new 64-bit support
 - New Feature: Xcode 5 now automatically displays integration tips (defined in **chartboost.h**), contextually presenting them while you code
 
-##### v3.3
+Version 3.3.0 *(2013-10-17)*
+----------------------------
 
 - Fully compatible with iOS 7 64-bit-only projects. Maintains support for 32-bit projects and iOS 5.1+ devices. 
 
-##### v3.2.2 
+Version 3.2.2 *(2013-10-08)*
+----------------------------
 
 - Added a new public method (`dismissChartboostView`) to dismiss an interstitial or More Apps view programmatically 
 - Fixed a bug causing indefinite loading after More Apps page clicks while in Airplane Mode
@@ -158,7 +227,8 @@
 - Fixed bug affecting display of More Apps button labels on iOS 7 devices
 - Fixed bug causing crashes when user clicked interstitial with no iTunes URL set via the dashboard
 
-##### v3.2.1
+Version 3.2.1 *(2013-05-23)*
+----------------------------
 
 - Improved long term memory management
 - Better handles clicks on interstitials with malformed URLs
@@ -167,7 +237,8 @@
 - Replaced third party JSON lib with Apple internal JSON serializer
 - Compatible only with iOS 5.0+. If you need iOS 4.3+ compatibility, use SDK version 3.2 below
 
-##### v3.2
+Version 3.2.0 *(2013-05-24)*
+----------------------------
 
 - Minimum OS version: iOS 5.0
 - __UDID method removed__. Use this SDK in any apps submitted to the App Store after May 1st, 2013.
@@ -181,13 +252,15 @@
 
 **Note:** "Unique" column of App Analytics temporarily shows 0 for apps using SDK v3.2. Please use "Installs" or "Bootups" for reference.
 
-##### v3.1.1
+Version 3.1.1 *(2013-02-26)*
+----------------------------
 
 - Stability improvements for apps with over 300mb of bundled assets
 - Fixed rare visual glitch where interstitial positions itself incorrectly
   relative to status bar after app rotation
 
-##### v3.1
+Version 3.1.0 *(2012-10-12)*
+----------------------------
 
 - Added support for the iOS 6 App Sheet so your users can download apps without
   ever leaving your app! You must include StoreKit.framework for access to the
@@ -199,7 +272,8 @@
 - Note: This version and all versions in the future are compatible with iOS
   version 4.3 and higher ONLY (armv7 and armv7s).
 
-##### v3.0.7
+Version 3.0.7 *(2012-10-22)*
+----------------------------
 
 - **REQUIRED: You must include AdSupport.framework for access to the
 identifierForAdvertising**
@@ -209,37 +283,44 @@ identifierForAdvertising**
   interstitials only after 2nd startSession call
 - Internal API upgrades
  
-##### v3.0.6
+Version 3.0.6 *(2012-09-13)*
+----------------------------
 
 - Automatic interstitial caching now uses a version fallback if your app does
   not include CFBundleShortVersionString in the info.plist. For best
   interstitial caching, add CFBundleShortVersionString key and value to your
   info.plist.
 
-##### v3.0.5
+Version 3.0.5 *(2012-08-28)*
+----------------------------
 
 - Fixed rare crash in web image caching library
 
-##### v3.0.4
+Version 3.0.4 *(2012-08-16)*
+----------------------------
 
 - Added SDK support for targeting Wi-fi devices
 
-##### v3.0.3
+Version 3.0.3 *(2012-07-31)*
+----------------------------
 
 - Removed automatic removal of interstitials and more apps view when
   backgrounding app
 
-##### v3.0.2
+Version 3.0.2 *(2012-07-20)*
+----------------------------
 
 - Improves click tracking in race conditions
 - Fixes issue where cached ads appear during backgrounding
 - Fixed JSON crasher in CB Analytics
 
-##### v3.0.1
+Version 3.0.1 *(2012-07-06)*
+----------------------------
 
 - Improved compatibility with iOS version 4.0 - 4.2
 
-##### v3.0
+Version 3.0.0 *(2012-07-02)*
+----------------------------
 
 - Mandatory updates:
     - Delegate methods now return location strings (no longer pass in a view)

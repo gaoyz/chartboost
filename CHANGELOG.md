@@ -1,12 +1,65 @@
 iOS Change Log
 ==============
 
+Version 5.1.5 *(2015-03-13)*
+----------------------------
+
+Features:
+
+
+Fixes:
+
+
+- Fix issue where close buttons for video were not working on startup. 
+
+Improvements:
+
+
+Version 5.1.4 *(2015-03-04)*
+----------------------------
+
+Features:
+
+- Added a new method 'setStatusBarBehavior' to control how fullscreen video ads interact with the status bar. 
+
+Fixes:
+
+- Fix for duplicate calls to the creative url from the SDK. This should fix issues with third party click tracking reporting click numbers twice what we report. 
+- Fix for max ads not being respected when campaign is set to show once per hour and autocache is set to YES. There is now a small delay after successful show call. 
+- Fix issue for interstitial video and rewarded video calling didDismissInterstitial or didDismissRewardedVideo during a click event. 
+- Fix issue where didClickInterstitial not firing for interstitial video. 
+- Fix issue where close buttons for fullscreen video were appearing behing the status bar. 
+
+Improvements:
+
+- Added the location parameter, when available, to more relevant network requests. This should provide more information to analytics. 
+
+Version 5.1.3 *(2015-01-16)*
+----------------------------
+
+Features:
+
+Fixes:
+
+- Disabled request retries by default, fix for multithreaded crashes 
+- Fix for when the device is in an orientation we do not have assets for. Instead of failing silently a CBLoadError is now called.  
+
+Improvements:
+
+- Better inplay caching  
+- Added orientation information to api-click, and video-complete calls. Allows for better analytics 
+- Remove hardcoded affiliate token. Now pulled from the server 
+- Added example usage of isAnyViewVisible: delegate method into the sample project 
+- Added inplay button to the chartboost example app 
+- Improved logging for when someone tries to show a rewarded video with prefetching disabled. Instead of failing silently a CBLoadError is called. 
+
 Version 5.1.2 *(2014-12-05)*
 ----------------------------
 
 Features:
 
 Fixes:
+
 - Fix CBAppCall crash if no resource path sent with URL. 
 - Fix bug with SKStoreProductViewController crashing due to race condition. 
 - Fix SKStoreProductViewController rotation issue with Unity. 
@@ -20,6 +73,7 @@ Version 5.1.1 *(2014-12-01)*
 Features:
 
 Fixes:
+
 - Fix build for armv7s architectures. 
 
 Improvements:
@@ -30,6 +84,7 @@ Version 5.1.0 *(2014-11-20)*
 Features:
 
 Fixes:
+
 - Fix race condition between actions for video on replay. 
 - Fix loading screen causing issues with video and app sheet. 
 - Fix interstitial video close button appearing at incorrect time in portrait orientation. 

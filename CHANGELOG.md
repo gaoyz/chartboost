@@ -1,14 +1,48 @@
 iOS Change Log
 ==============
 
+Version 5.2.1 *(2015-04-09)*
+----------------------------
+
+Features:
+
+Fixes:
+
+- Fix issue for CoreData crash occuring on the first bootup of an app. 
+- Fix an issue for a symbol collision on `audioRouteChangeListenerCallback` with other third party SDKs. 
+- Fix issue for more apps not resizing when changing orientation. 
+
+Improvements:
+
+Version 5.2.0 *(2015-04-03)*
+----------------------------
+
+Features:
+
+- Add a developer facing function to force close any visible impression and or loading views. 
+- Added a new method to CBAnalytics 'trackInAppPurchaseEventWithString' that acts like the trackInAppPurchaseEvent but takes a string instead of raw receipt data to allow frameworks to pass in base64 encoded receipts. 
+- PIA Level Tracking available in CBAnalytics 
+
+Fixes:
+
+- Fix headphone unplug pausing rewarded video & video interstitial campaigns. This would lead to a deadlock situation in rewarded video and poor user experience in video interstitial 
+- Change the conditions for when we fire the didFailToLoadRewardedVideo delegate. It will now fire if a rewarded video is requested before prefetching finishes. 
+- When setShouldDisplayLoadingViewForMoreApps is set to YES, the loading view was not being displayed in a timely manner. This is now fixed by running it on the main thread. 
+- Fixed an issue with age gate being covered up by rewarded video & video interstitial ad types. The impression will pause and disappear so the user can complete age gate and re-appear and resume after a user selection. 
+
+Improvements:
+
+- New Core Data backed persistence layer for the Chartboost request manager 
+- New way for SDK to batch requests for an endpoint. Cuts down on outgoing network requests. Only enabled for level tracking 
+
 Version 5.1.5 *(2015-03-13)*
 ----------------------------
 
 Features:
 
+- Add ability to have the rewarded video pre-roll (confirmation screen) be fullscreen 
 
 Fixes:
-
 
 - Fix issue where close buttons for video were not working on startup. 
 

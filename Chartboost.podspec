@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'ChartboostSDK'
-  s.version = '5.5.1'
+  s.version = '5.5.3'
   s.license = 'Commercial'
   s.summary = 'ChartboostSDK for showing ads and more.'
   s.homepage = 'https://chartboost.com/'

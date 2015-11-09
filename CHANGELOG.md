@@ -1,12 +1,21 @@
 iOS Change Log
 ==============
 
+Version 6.0.1 *(2015-10-13)*
+----------------------------
+
+Fixes:
+
+- Calls to cacheInterstitial and cacheRewardedVideo retry again when there is nothing in the video cache 
+- Xcode 7.0.1 would not archive with bitcode enabled 
+- Fixed build warnings with bitcode enabled 
+
 Version 6.0.0 *(2015-10-12)*
 ----------------------------
 
 Features:
 
-- WebView HTML5 Video Ad experience with custom templates and themes.
+- Video experience rebuilt from the ground up, upgrade to this SDK to enable Chartboost's behind-the-scenes video optimization (highly recommended!)
 - Removed deprecated Chartboost Newsfeed.
 
 Fixes:

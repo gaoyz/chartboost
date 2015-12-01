@@ -1,6 +1,21 @@
 iOS Change Log
 ==============
 
+Version 6.1.0 *(2015-11-12)*
+----------------------------
+
+Improvements:
+
+- Added support for iOS9 split screen mode. 
+
+- Added didInitialize delegate that is called when Chartboost has been initialized. Replaces didPrefetchVideo. 
+
+Fixes:
+
+- Fixed a rare crash when reopening the application when an ad was just displayed. 
+- The delegate didPrefetchVideo is only called once. 
+
+
 Version 6.0.1 *(2015-10-13)*
 ----------------------------
 
@@ -28,6 +43,13 @@ Improvements:
 
 - setMediation now uses enumerated constants for partners. 
 
+Version 5.5.5 *(2015-09-23)*
+----------------------------
+
+Fixes:
+- Fixed a z-order issue with Unity version 5.1.1+. 
+- setMediation now uses enumerated constants for partners. 
+- Reworked delegates to run on main thread. 
 
 Version 5.5.4 *(2015-09-01)*
 ----------------------------

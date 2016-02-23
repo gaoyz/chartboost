@@ -1,10 +1,13 @@
 /*
  * Chartboost.h
  * Chartboost
- * 6.1.0
+ * 6.3.0
  *
  * Copyright 2011 Chartboost. All rights reserved.
  */
+
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /*!
  @typedef NS_ENUM (NSUInteger, CBFramework)
@@ -211,6 +214,18 @@ extern CBLocation const CBLocationDefault;
 + (void)startWithAppId:(NSString*)appId
           appSignature:(NSString*)appSignature
               delegate:(id<ChartboostDelegate>)delegate;
+
+/*!
+ @abstract 
+ Set the Chartboost Delegate
+ 
+ @param del The new Chartboost Delegate for the sharedChartboost instance
+ 
+ @discussion This doesn't need to be called when calling startWithAppID, only later
+ to switch the delegate object.
+ */
++ (void)setDelegate:(id<ChartboostDelegate>)del;
+
 
 /*!
  @abstract
@@ -500,6 +515,14 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  */
 + (void)setShouldPrefetchVideoContent:(BOOL)shouldPrefetch;
 
+
+/*!
+ @abstract
+ Returns the version of the Chartboost SDK.
+ */
++ (NSString*)getSDKVersion;
+
+
 #pragma mark - Advanced Caching
 
 /*!
@@ -580,6 +603,17 @@ example setFramework:Unity withVersion:4.6, setFrameworkVersion:5.2.1
  application has the status bar enabled.
  */
 + (void)setStatusBarBehavior:(CBStatusBarBehavior)statusBarBehavior;
+
+
+/*!
+ @abstract 
+ returns YES if auto IAP tracking is enabled, NO if it isn't.
+
+ @discussion Call to check if automatic tracking of in-app purchases is enabled. 
+ The setting is controlled by the server.
+ */
++ (BOOL)getAutoIAPTracking;
+
 
 @end
 

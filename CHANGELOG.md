@@ -1,6 +1,27 @@
 iOS Change Log
 ==============
 
+Version 6.4.0 *(2016-03-14)*
+----------------------------
+- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
+- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
+
+*Features & Improvements:*
+- Calls to 'cacheInterstitial' and 'cacheRewarded' have been optimized to require less memory.
+- Interstitials will now fail gracefully instead of showing with missing assets.
+- Added a retry mechanism for downloading failed assets.
+- Closing the "loading" view has moved to the main thread.
+
+*Fixes:*
+- Updated documentation to use 'hasInterstitial' instead of 'hasCachedInterstitial.'
+
+Version 6.4.1 *(2016-03-14)*
+----------------------------
+- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
+- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
+- This version is a variation of SDK version 6.4.0 for developers who need to build on older versions of Xcode. This SDK version does not have bitcode support.
+
+
 Version 6.3.1 *(2016-02-08)*
 ------------------------------
 - Upgrade now to enable Chartboost's behind-the-scenes video optimization.

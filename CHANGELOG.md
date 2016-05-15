@@ -1,6 +1,31 @@
 iOS Change Log
 ==============
 
+Version 6.4.4 *(2016-05-4)*
+----------------------------
+- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
+- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
+- Various Bug Fixes
+
+Version 6.4.3 *(2016-03-31)*
+----------------------------
+- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
+- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
+- Various Bug Fixes
+- This version is a variation of SDK version 6.4.0 for developers who need to build on older versions of Xcode. This SDK version does not have bitcode support.
+
+Version 6.4.2 *(2016-03-31)*
+----------------------------
+- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
+- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
+- Various Bug Fixes
+
+Version 6.4.1 *(2016-03-14)*
+----------------------------
+- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
+- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
+- This version is a variation of SDK version 6.4.0 for developers who need to build on older versions of Xcode. This SDK version does not have bitcode support.
+
 Version 6.4.0 *(2016-03-14)*
 ----------------------------
 - With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
@@ -14,13 +39,6 @@ Version 6.4.0 *(2016-03-14)*
 
 *Fixes:*
 - Updated documentation to use 'hasInterstitial' instead of 'hasCachedInterstitial.'
-
-Version 6.4.1 *(2016-03-14)*
-----------------------------
-- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
-- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
-- This version is a variation of SDK version 6.4.0 for developers who need to build on older versions of Xcode. This SDK version does not have bitcode support.
-
 
 Version 6.3.1 *(2016-02-08)*
 ------------------------------

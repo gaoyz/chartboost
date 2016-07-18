@@ -1,6 +1,12 @@
 iOS Change Log
 ==============
 
+Version 6.4.6
+----------------------------
+- With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
+- We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.
+- Various Bug Fixes
+
 Version 6.4.4 *(2016-05-4)*
 ----------------------------
 - With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!

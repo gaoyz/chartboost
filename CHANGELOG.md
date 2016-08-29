@@ -1,7 +1,14 @@
 iOS Change Log
 ==============
 
-Version 6.4.6
+Version 6.4.7 *(2016-07-25)*
+----------------------------
+Fixes:
+- Cache folders combined and various timing changes implemented to avoid possible issues with delivering impressions.
+- Video file sizes are now checked during download and maintenance to prevent corruption.
+- Framework file in the Example project has been replaced with a reference to the file in order to reduce download size.
+
+Version 6.4.6 *(2016-06-22)*
 ----------------------------
 - With this SDK we will begin rolling out a brand new Chartboost Video experience, tailored specially for games. Upgrade now!
 - We've also improved key features like video caching, memory management, and data usage for optimal SDK performance.

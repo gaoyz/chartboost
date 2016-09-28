@@ -1,6 +1,28 @@
 iOS Change Log
 ==============
 
+Version 6.5.1 *(2016-09-20)*
+----------------------------
+Important:
+- iOS 6 is no longer supported. iOS 7.0 is the minimum supported iOS version.
+Fixes:
+- Fixed bug that prevented MoreApps from showing.
+
+Version 6.5.0 *(2016-09-12)*
+----------------------------
+Important:
+- iOS is no longer supported. iOS 7.0 is the minimum supported iOS version.
+
+*Updates*
+- Networking stack has been upgraded to AFNetworking 3.0.
+- Added features to help support iOS changes to limit ad tracking.
+- iOS 10 compatibility.
+*Fixes*
+- Fixed IFV reporting bug.
+- Fixed bug that could retain a bad ad unit in the cache.
+- Fixed bug that could send an inaccurate list of local videos to the server.
+- Changed timeout for bad ad units to 3 seconds to avoid excessive loading bar wait time.
+
 Version 6.4.7 *(2016-07-25)*
 ----------------------------
 Fixes:

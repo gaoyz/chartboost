@@ -2,6 +2,13 @@ iOS Change Log
 ==============
 
 
+Version 6.6.3 *(2017-05-01)*
+----------------------------
+Fixes:
+- didCache and has delegates are no longer called when the ad is not ready to be displayed.
+- Fixed timing issue where prefetch calls at bootup might negatively affect get calls.
+
+
 Version 6.6.2 *(2017-03-02)*
 ----------------------------
 Fixes & Improvements:
